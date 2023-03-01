@@ -1,0 +1,24 @@
+{  
+    
+"products":[
+    {
+    "ProductName":"Soup",
+    "Category":"Vegetable",
+    "date":"10/10/10",
+    "Freshness":"Second Hand",
+    "Price":8,
+    "Comment":"this should be displayed auto "
+},
+{
+    "ProductName":"Soup",
+    "Category":"Vegetable",
+    "date":"10/10/10",
+    "Freshness":"Second Hand",
+    "Price":8,
+    "Comment":"this should be displayed auto "
+}
+
+] 
+    
+   
+}

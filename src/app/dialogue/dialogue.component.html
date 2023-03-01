@@ -1,0 +1,51 @@
+<h1 mat-dialog-title>Add Product Form</h1>
+<form #itemForm="ngForm" (ngSubmit)="createcourse(itemForm)">
+  <mat-dialog-content>
+    <mat-form-field appearance="outline">
+      <mat-label>Product Name</mat-label>
+      <input matInput placeholder="Name" name="Name" [(ngModel)]="selected.ProductName">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Product Category</mat-label>
+      <mat-select placeholder="Category" name="categ" [(ngModel)]="selected.Category">
+        <mat-option value="fruits">Fruits</mat-option>
+        <mat-option value="vegetables">Vegetables</mat-option>
+        <mat-option value="juice">Juice</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Choose a Date</mat-label>
+      <input type="date" matInput placeholder="Date" name="date" [(ngModel)]="selected.date">
+    </mat-form-field>
+
+    <label id="example-radio-group-label">Product Freshness</label>
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group">
+      <mat-radio-button class="example-radio-button" *ngFor="let item of freshnessList" value="" name="Freshness" [(ngModel)]="selected.Freshness">
+        {{item}}
+      </mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Price</mat-label>
+      <input matInput type="number" min="0" placeholder="Price" name="price" [(ngModel)]="selected.Price">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Comment</mat-label>
+      <textarea matInput placeholder="Comment" name="Comment" [(ngModel)]="selected.Comment"></textarea>
+    </mat-form-field>
+
+    <mat-dialog-actions align="end">
+      <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+      <button mat-raised-button type="submit" color="primary">Save</button>
+    </mat-dialog-actions>
+
+    
+
+    <ng-template #loading>
+      <p>Loading products...</p>
+    </ng-template>
+  </mat-dialog-content>
+</form>
